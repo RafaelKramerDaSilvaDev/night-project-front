@@ -1,4 +1,4 @@
-import { createGlobalStyle, css } from "styled-components";
+import { createGlobalStyle, css } from 'styled-components'
 
 const reset = css`
   html,
@@ -117,15 +117,19 @@ const reset = css`
   blockquote:after,
   q:before,
   q:after {
-    content: "";
+    content: '';
     content: none;
   }
   table {
     border-collapse: collapse;
     border-spacing: 0;
   }
-`;
+
+  #root {
+    font-family: 'Inter', sans-serif;
+  }
+`
 
 export const GlobalStyle = createGlobalStyle`
     ${reset}
-`;
+`

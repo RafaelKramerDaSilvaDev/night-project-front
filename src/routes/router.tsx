@@ -1,16 +1,16 @@
-import { createBrowserRouter } from "react-router-dom";
-import { Default } from "../components/templates/Default";
-import { Signin } from "../pages/Signin";
+import { createBrowserRouter } from 'react-router-dom'
+import { Default } from '../components/templates/Default'
+import { Signin } from '../pages/Signin'
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Default />,
     children: [
       {
-        path: "/",
+        path: '/',
         element: <Signin />,
       },
     ],
   },
-]);
+])
