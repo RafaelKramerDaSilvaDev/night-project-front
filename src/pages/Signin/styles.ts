@@ -10,9 +10,7 @@ export const Signin = styled.div`
 `
 
 export const Container = styled.div`
-  display: grid;
-  grid-template-areas: 'gradient login';
-  grid-template-columns: auto 21.563rem;
+  display: flex;
 
   border-radius: 12px;
   box-shadow: 0px 6px 215.7px 5px rgba(0, 0, 0, 0.25);
@@ -22,24 +20,27 @@ export const Container = styled.div`
   height: 33rem;
 
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    max-width: max-content;
+  }
 `
 
 export const Gradient = styled.div`
-  grid-area: gradient;
-
   background: linear-gradient(90deg, #14b0ff 0%, #6950f5 100%);
   width: 100%;
+
+  @media (max-width: 768px) {
+    width: 0;
+  }
 `
 
 export const LoginContainer = styled.div`
-  grid-area: login;
-
   display: flex;
   justify-content: center;
   align-items: center;
 
-  width: 100%;
-  height: 100%;
+  padding: 3rem;
 
   border-radius: 0px 12px 12px 0px;
   background: #fff;
@@ -60,14 +61,6 @@ export const Form = styled.form`
   gap: 2rem;
 
   width: 100%;
-`
-
-export const Title = styled.h1`
-  color: #507ef5;
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
 `
 
 export const Text = styled.h3`
@@ -95,4 +88,9 @@ export const ForgotPassword = styled.a`
     text-decoration: underline;
     filter: brightness(80%);
   }
+`
+
+export const ErrorMessage = styled.p`
+  font-size: 0.75rem;
+  color: #ef4040;
 `

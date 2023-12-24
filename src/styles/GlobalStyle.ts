@@ -129,7 +129,7 @@ const reset = css`
     font-family: 'Inter', sans-serif;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 768px) {
     html {
       font-size: 87.5%;
     }

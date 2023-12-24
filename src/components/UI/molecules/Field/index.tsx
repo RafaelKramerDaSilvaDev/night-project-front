@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { forwardRef, useState } from 'react'
+import { FieldError } from 'react-hook-form'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { Input } from '../../atoms/Input'
 import { Label } from '../../atoms/Label'
@@ -7,6 +8,7 @@ import * as S from './styles'
 type FieldProps = {
   label?: string
   placeholder?: string
+  error?: FieldError
   type?:
     | 'button'
     | 'checkbox'
@@ -32,22 +34,30 @@ type FieldProps = {
     | 'week'
 }
 
-export function Field({ label, type = 'text', placeholder }: FieldProps) {
-  const [showPassword, setShowPassword] = useState(false)
+export const Field = forwardRef<HTMLInputElement, FieldProps>(
+  ({ label, type = 'text', placeholder, error, ...rest }, ref) => {
+    const [showPassword, setShowPassword] = useState(false)
 
-  return (
-    <S.Field>
-      {label && <Label>{label}</Label>}
-      <S.InputContainer>
-        <Input
-          type={showPassword ? 'text' : type}
-          placeholder={placeholder ?? ''}
-        />
-        <S.EyeContainer onClick={() => setShowPassword((prev) => !prev)}>
-          {type === 'password' && showPassword && <FaEye />}
-          {type === 'password' && !showPassword && <FaEyeSlash />}
-        </S.EyeContainer>
-      </S.InputContainer>
-    </S.Field>
-  )
-}
+    return (
+      <S.Field>
+        {label && <Label>{label}</Label>}
+        <S.InputContainer>
+          <Input
+            ref={ref}
+            type={type === 'password' && showPassword ? 'text' : type}
+            placeholder={placeholder}
+            {...rest}
+          />
+          {type === 'password' && (
+            <S.EyeContainer onClick={() => setShowPassword((prev) => !prev)}>
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </S.EyeContainer>
+          )}
+        </S.InputContainer>
+        {error && <S.ErrorMessage>{error.message}</S.ErrorMessage>}
+      </S.Field>
+    )
+  },
+)
+
+Field.displayName = 'Field'
