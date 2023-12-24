@@ -1,16 +1,26 @@
 import styled from 'styled-components'
 
-export const Signin = styled.div`
+export const Signin = styled.div``
+
+export const Container = styled.div`
   display: flex;
   justify-content: flex-end;
 
   border-radius: 12px;
-  background: linear-gradient(90deg, #14b0ff 0%, #6950f5 100%);
   box-shadow: 0px 6px 215.7px 5px rgba(0, 0, 0, 0.25);
 
   width: 59.625rem;
   height: 33rem;
+
+  overflow: hidden;
 `
+
+export const GradientColor = styled.div`
+  flex: 1;
+  background: linear-gradient(90deg, #14b0ff 0%, #6950f5 100%);
+  width: 100%;
+`
+
 export const Box = styled.div`
   display: flex;
   justify-content: center;
@@ -28,7 +38,7 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
-  gap: 3.125rem;
+  gap: 2.625rem;
 `
 
 export const Form = styled.form`
