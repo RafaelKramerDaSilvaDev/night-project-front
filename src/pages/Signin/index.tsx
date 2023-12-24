@@ -6,8 +6,8 @@ export function Signin() {
   return (
     <S.Signin>
       <S.Container>
-        <S.GradientColor />
-        <S.Box>
+        <S.Gradient />
+        <S.LoginContainer>
           <S.Content>
             <S.Title>Boa Tarde</S.Title>
             <S.Text>
@@ -20,7 +20,7 @@ export function Signin() {
             </S.Form>
             <Button>Entrar</Button>
           </S.Content>
-        </S.Box>
+        </S.LoginContainer>
       </S.Container>
     </S.Signin>
   )

@@ -128,6 +128,12 @@ const reset = css`
   #root {
     font-family: 'Inter', sans-serif;
   }
+
+  @media (max-width: 425px) {
+    html {
+      font-size: 87.5%;
+    }
+  }
 `
 
 export const GlobalStyle = createGlobalStyle`

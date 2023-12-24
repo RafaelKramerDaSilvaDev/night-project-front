@@ -1,32 +1,44 @@
 import styled from 'styled-components'
 
-export const Signin = styled.div``
+export const Signin = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+`
 
 export const Container = styled.div`
-  display: flex;
-  justify-content: flex-end;
+  display: grid;
+  grid-template-areas: 'gradient login';
+  grid-template-columns: auto 21.563rem;
 
   border-radius: 12px;
   box-shadow: 0px 6px 215.7px 5px rgba(0, 0, 0, 0.25);
 
-  width: 59.625rem;
+  max-width: 59.625rem;
+  width: 100%;
   height: 33rem;
 
   overflow: hidden;
 `
 
-export const GradientColor = styled.div`
-  flex: 1;
+export const Gradient = styled.div`
+  grid-area: gradient;
+
   background: linear-gradient(90deg, #14b0ff 0%, #6950f5 100%);
   width: 100%;
 `
 
-export const Box = styled.div`
+export const LoginContainer = styled.div`
+  grid-area: login;
+
   display: flex;
   justify-content: center;
   align-items: center;
 
-  width: 21.563rem;
+  width: 100%;
   height: 100%;
 
   border-radius: 0px 12px 12px 0px;

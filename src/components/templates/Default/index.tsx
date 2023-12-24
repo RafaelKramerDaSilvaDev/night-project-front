@@ -4,9 +4,7 @@ import * as S from './styles'
 export function Default() {
   return (
     <S.Default>
-      <S.Content>
-        <Outlet />
-      </S.Content>
+      <Outlet />
     </S.Default>
   )
 }

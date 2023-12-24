@@ -1,13 +1,8 @@
 import styled from 'styled-components'
 
 export const Default = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: calc(100vh - 2rem);
+  width: calc(100vw - 2rem);
 
-  height: 100vh;
-  width: 100vw;
-`
-export const Content = styled.div`
   padding: 1rem;
 `
