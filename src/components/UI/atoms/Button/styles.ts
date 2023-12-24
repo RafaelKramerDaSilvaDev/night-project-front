@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 type ButtonStyleProps = {
-  $w: number | string
+  $w?: number | string
 }
 
 export const Button = styled.button<ButtonStyleProps>`
