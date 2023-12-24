@@ -1,8 +1,14 @@
 import { ButtonHTMLAttributes } from 'react'
 import * as S from './styles'
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  w: number | string
+}
 
-export function Button({ children, ...props }: ButtonProps) {
-  return <S.Button {...props}>{children}</S.Button>
+export function Button({ children, w, ...props }: ButtonProps) {
+  return (
+    <S.Button $w={w} {...props}>
+      {children}
+    </S.Button>
+  )
 }

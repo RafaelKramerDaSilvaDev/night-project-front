@@ -1,8 +1,20 @@
 import styled from 'styled-components'
 
-export const Button = styled.button`
+type ButtonStyleProps = {
+  $w: number | string
+}
+
+export const Button = styled.button<ButtonStyleProps>`
   display: flex;
-  width: 14.125rem;
+
+  width: ${({ $w }) => {
+    if (!$w) return '14.125rem'
+
+    if (typeof $w === 'number') return `${$w}rem`
+
+    if (typeof $w === 'string') return $w
+  }};
+
   padding: 1.188rem 5.25rem;
   justify-content: center;
   align-items: center;
